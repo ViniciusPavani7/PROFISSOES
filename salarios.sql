@@ -25,16 +25,37 @@ INSERT INTO salarios (NOMES, PROFISSAO, SALARIO) VALUES
 ('Júlia Costa', 'Profissional de TI', 1200),
 ('Gustavo Carneiro', 'Ator', 30000);
 
+--SOMA SALÁRIOS
+SELECT SUM(salario) AS SOMASAL_PROF 	
+FROM salarios
+WHERE PROFISSAO = 'professor'
+
+--MÉDIA 
+SELECT AVG(salario) AS media_salarios			
+FROM salarios										  
+WHERE PROFISSAO = 'Profissional de TI' AND 						      
+nome IN ('Mariana Silva', 'Juliana Rodrigues')
+
+--MÁXIMO
+SELECT MAX(salario) AS maior_sal_ti							 
+FROM salarios									     	   
+WHERE PROFISSAO = 'Profissional de TI' AND					 	         
+nome IN ('Mariana Silva', 'Juliana Rodrigues')
+
+--MÍNIMO
+SELECT MIN(salario) AS MENOS_SALARIO
+FROM salarios
+WHERE PROFISSAO = 'Professor'; 
+
+
+--PARTE 2--
+
 
 SELECT MAX(SALARIO) AS MAIOR_SAL
-
 FROM salarios
-
 WHERE PROFISSAO IN ('Jogador de Futebol', 'Professor')
 
 
 SELECT MAX(SALARIO) AS MAIOR_SAL
-
 FROM salarios
-
 WHERE PROFISSAO IN ('Jogador de Futebol', 'Professor', 'Musico')
